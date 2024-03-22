@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94vw;
+  height: 90vh;
+  border: 5px black solid;
+}
+.second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 80%;
+  border: 5px black solid;
+}
+.third {
+  width: 60%;
+  height: 70%;
+  border: 5px black solid;
+}
+.verTop {
+  width: 5px;
+  height: 22%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+}
+.verBottom{
+    width: 5px;
+    height: 22%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+.horLeft{
+    height: 5px;
+    width: 29%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+}
+.horRight{
+    height: 5px;
+    width: 29%;
+    background-color: black;
+    position: absolute;
+    right: 0;
+}
