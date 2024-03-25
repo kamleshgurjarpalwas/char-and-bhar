@@ -1,6 +1,7 @@
 body {
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: center;
 }
 .container {
@@ -8,13 +9,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 8vh;
 }
 .first {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 94vw;
-  height: 90vh;
+  width: 90vw;
+  height: 80vh;
   border: 5px black solid;
 }
 .second {
@@ -24,6 +26,7 @@ body {
   width: 70%;
   height: 80%;
   border: 5px black solid;
+  position: relative;
 }
 .third {
   width: 60%;
@@ -37,24 +40,204 @@ body {
   position: absolute;
   top: 0;
 }
-.verBottom{
-    width: 5px;
-    height: 22%;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
+.verBottom {
+  width: 5px;
+  height: 22%;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
 }
-.horLeft{
-    height: 5px;
-    width: 29%;
-    background-color: black;
-    position: absolute;
-    left: 0;
+.horLeft {
+  height: 5px;
+  width: 29%;
+  background-color: black;
+  position: absolute;
+  left: 0;
 }
-.horRight{
-    height: 5px;
-    width: 29%;
-    background-color: black;
-    position: absolute;
-    right: 0;
+.horRight {
+  height: 5px;
+  width: 29%;
+  background-color: black;
+  position: absolute;
+  right: 0;
+}
+
+.goti-stand {
+  height: 20px;
+  width: 20px;
+  background-color: aqua;
+  border-radius: 50%;
+  border: 3px black solid;
+  position: absolute;
+}
+
+#goti1 {
+  top: -6px;
+  left: -6px;
+}
+#goti2 {
+  top: -6px;
+}
+#goti3 {
+  top: -6px;
+  right: -6px;
+}
+#goti4 {
+  top: 8.5%;
+  left: 14.3%;
+}
+#goti5 {
+  top: 8.5%;
+}
+#goti6 {
+  top: 8.5%;
+  right: 14.3%;
+}
+#goti7 {
+  top: 20.5%;
+  left: 28%;
+}
+#goti8 {
+  top: 20.5%;
+}
+#goti9 {
+  top: 20.5%;
+  right: 28%;
+}
+#goti10 {
+  left: -6px;
+}
+#goti11 {
+  left: 14.3%;
+}
+#goti12 {
+  left: 28%;
+}
+#goti13 {
+  right: 28%;
+}
+#goti14 {
+  right: 14.3%;
+}
+#goti15 {
+  right: -6px;
+}
+#goti16 {
+  left: 28%;
+  bottom: 20.5%;
+}
+#goti17 {
+  bottom: 20.5%;
+}
+#goti18 {
+  right: 28%;
+  bottom: 20.5%;
+}
+#goti19{
+  bottom: 8.5%;
+  left: 14.3%;
+}
+#goti20{
+  bottom: 8.5%;
+}
+#goti21{
+  bottom: 8.5%;
+  right: 14.3%;
+}
+#goti22{
+  bottom: -6px;
+  left: -6px;
+}
+#goti23{
+  bottom: -6px;
+}
+#goti24{
+  bottom: -6px;
+  right: -6px;
+}
+@media only screen and (max-width:426px ){
+  #goti1 {
+    top: -6px;
+    left: -6px;
+  }
+  #goti2 {
+    top: -6px;
+  }
+  #goti3 {
+    top: -6px;
+    right: -6px;
+  }
+  #goti4 {
+    top: 8.5%;
+    left: 13%;
+  }
+  #goti5 {
+    top: 8.5%;
+  }
+  #goti6 {
+    top: 8.5%;
+    right: 13%;
+  }
+  #goti7 {
+    top: 20.5%;
+    left: 26%;
+  }
+  #goti8 {
+    top: 20.5%;
+  }
+  #goti9 {
+    top: 20.5%;
+    right: 26%;
+  }
+  #goti10 {
+    left: -6px;
+  }
+  #goti11 {
+    left: 12%;
+  }
+  #goti12 {
+    left: 26%;
+  }
+  #goti13 {
+    right: 26%;
+  }
+  #goti14 {
+    right: 12%;
+  }
+  #goti15 {
+    right: -6px;
+  }
+  #goti16 {
+    left: 26%;
+    bottom: 20.5%;
+  }
+  #goti17 {
+    bottom: 20.5%;
+  }
+  #goti18 {
+    right: 26%;
+    bottom: 20.5%;
+  }
+  #goti19{
+    bottom: 8.5%;
+    left: 13%;
+  }
+  #goti20{
+    bottom: 8.5%;
+  }
+  #goti21{
+    bottom: 8.5%;
+    right: 13%;
+  }
+  #goti22{
+    bottom: -6px;
+    left: -6px;
+  }
+  #goti23{
+    bottom: -6px;
+  }
+  #goti24{
+    bottom: -6px;
+    right: -6px;
+  }
 }
