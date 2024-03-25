@@ -1,7 +1,6 @@
 body {
   display: flex;
   align-items: center;
-  align-content: center;
   justify-content: center;
 }
 .container {
@@ -63,6 +62,9 @@ body {
 }
 
 .goti-stand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20px;
   width: 20px;
   background-color: white;
@@ -133,29 +135,65 @@ body {
   right: 28%;
   bottom: 20.5%;
 }
-#goti19{
+#goti19 {
   bottom: 8.5%;
   left: 14.3%;
 }
-#goti20{
+#goti20 {
   bottom: 8.5%;
 }
-#goti21{
+#goti21 {
   bottom: 8.5%;
   right: 14.3%;
 }
-#goti22{
+#goti22 {
   bottom: -6px;
   left: -6px;
 }
-#goti23{
+#goti23 {
   bottom: -6px;
 }
-#goti24{
+#goti24 {
   bottom: -6px;
   right: -6px;
 }
-@media only screen and (max-width:426px ){
+
+.elementForRedStorage {
+  margin: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  border: 3px black solid;
+}
+.elementForGreenStorage {
+  margin: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #05f545;
+  border: 3px black solid;
+}
+@media only screen and (max-width: 426px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+.forRedStorage,.forGreenStorage{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.forGreenStorage{
+  margin-top: 10px;
+}
+.container{
+  margin-top: 10px;
+}
   #goti1 {
     top: -6px;
     left: -6px;
@@ -218,25 +256,25 @@ body {
     right: 26%;
     bottom: 20.5%;
   }
-  #goti19{
+  #goti19 {
     bottom: 8.5%;
     left: 13%;
   }
-  #goti20{
+  #goti20 {
     bottom: 8.5%;
   }
-  #goti21{
+  #goti21 {
     bottom: 8.5%;
     right: 13%;
   }
-  #goti22{
+  #goti22 {
     bottom: -6px;
     left: -6px;
   }
-  #goti23{
+  #goti23 {
     bottom: -6px;
   }
-  #goti24{
+  #goti24 {
     bottom: -6px;
     right: -6px;
   }
