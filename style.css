@@ -71,6 +71,7 @@ body {
   border-radius: 50%;
   border: 3px black solid;
   position: absolute;
+  cursor: pointer;
 }
 
 #goti1 {
@@ -182,18 +183,19 @@ body {
     flex-direction: column;
   }
 
-.forRedStorage,.forGreenStorage{
-  display: flex;
+  .forRedStorage,
+  .forGreenStorage {
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-}
-.forGreenStorage{
-  margin-top: 10px;
-}
-.container{
-  margin-top: 10px;
-}
+  }
+  .forGreenStorage {
+    margin-top: 10px;
+  }
+  .container {
+    margin-top: 10px;
+  }
   #goti1 {
     top: -6px;
     left: -6px;
