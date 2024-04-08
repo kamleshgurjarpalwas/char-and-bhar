@@ -62,9 +62,6 @@ body {
 }
 
 .goti-stand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 20px;
   width: 20px;
   background-color: white;
@@ -73,6 +70,17 @@ body {
   position: absolute;
   cursor: pointer;
 }
+.eatable-goti{
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+  border: 1px black solid;
+  position: absolute;
+  cursor: pointer;
+}
+
+
 
 #goti1 {
   top: -6px;
@@ -172,7 +180,7 @@ body {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: #05f545;
+  background-color: blue;
   border: 3px black solid;
 }
 @media only screen and (max-width: 426px) {
@@ -183,19 +191,18 @@ body {
     flex-direction: column;
   }
 
-  .forRedStorage,
-  .forGreenStorage {
-    display: flex;
+.forRedStorage,.forGreenStorage{
+  display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-  }
-  .forGreenStorage {
-    margin-top: 10px;
-  }
-  .container {
-    margin-top: 10px;
-  }
+}
+.forGreenStorage{
+  margin-top: 10px;
+}
+.container{
+  margin-top: 10px;
+}
   #goti1 {
     top: -6px;
     left: -6px;
