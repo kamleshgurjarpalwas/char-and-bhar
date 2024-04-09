@@ -21,25 +21,29 @@ let count = 0;
 const gotiStands = document.querySelectorAll(".goti-stand");
 
 let turn = true;
+let turn1 = false; //yha per turn1 ka kaam hai ki yadi bhar banne per jab oposition ki goti khane ke bad anya gotiya click event ko nhi sune
 gotiStands.forEach((gs, index) => {
   gs.addEventListener("click", function () {
     if (!this.clicked) {
-      if (turn === true) {
-        gs.style.background = "blue";
-        gs.style.pointerEvents = "none";
-        deleteBox(turn);
-        count++;
-        if (count === 18) boxDisabl();
-        checkWinner();
-        turn = false;
-      } else {
-        gs.style.background = "red";
-        gs.style.pointerEvents = "none";
-        deleteBox(turn);
-        count++;
-        if (count === 18) boxDisabl();
-        checkWinner();
-        turn = true;
+      if (turn1 === false) {
+        console.log("uper waala daba hai");
+        if (turn === true) {
+          gs.style.background = "blue";
+          gs.style.pointerEvents = "none";
+          deleteBox(turn);
+          count++;
+          if (count === 18) boxDisabl();
+          checkWinner();
+          turn = false;
+        } else {
+          gs.style.background = "red";
+          gs.style.pointerEvents = "none";
+          deleteBox(turn);
+          count++;
+          if (count === 18) boxDisabl();
+          checkWinner();
+          turn = true;
+        }
       }
     }
   });
@@ -97,6 +101,7 @@ const checkWinner = () => {
 };
 
 const gotiWhichEatable = (comingColour) => {
+  turn1 = true; //yha true islliye kiya hai jab etable per click kiya ja sake
   if (comingColour === "red") {
     for (let eatBox of gotiStands) {
       if (eatBox.style.background === "blue") {
@@ -113,6 +118,7 @@ const gotiWhichEatable = (comingColour) => {
         }
       }
     }
+    doClickableForEatableGoti();
   } else {
     for (let eatBox of gotiStands) {
       if (eatBox.style.background === "red") {
@@ -129,5 +135,43 @@ const gotiWhichEatable = (comingColour) => {
         }
       }
     }
+    doClickableForEatableGoti();
+  }
+};
+
+const doClickableForEatableGoti = () => {
+  //yha function khane layak goti ko clickable banayega
+  const eatablegoti = document.querySelectorAll(".eatable-goti");
+  for (let butt of eatablegoti) {
+    butt.disabled = false;
+    butt.style.pointerEvents = "auto";
+  }
+  eatingGoti();
+};
+
+const eatingGoti = () => {
+  const eatingGoti = document.querySelectorAll(".eatable-goti");
+  {
+    eatingGoti.forEach((e, index) => {
+      e.addEventListener("click", function () {
+        if (turn1 === true) {
+          e.classList.remove("eatable-goti");
+          e.style.backgroundColor = "white";
+          console.log("niche wala daba hai");
+          normalLeftGotis();
+          turn1 = false;
+        }
+      });
+    });
+  }
+};
+
+//below function for normalization of eatable goties
+const normalLeftGotis = () => {
+  const toNormal = document.querySelectorAll(".eatable-goti");
+  for (let x of toNormal) {
+    x.classList.remove("eatable-goti");
+    x.disabled = true;
+    x.style.pointerEvents = "none";
   }
 };
