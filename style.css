@@ -62,25 +62,18 @@ body {
 }
 
 .goti-stand {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   background-color: white;
-  border-radius: 50%;
+  border-radius: 5px;
   border: 3px black solid;
   position: absolute;
-  cursor: pointer;
-}
-.eatable-goti{
-  height: 30px;
-  width: 30px;
-  background-color: black;
-  border-radius: 50%;
-  border: 1px black solid;
-  position: absolute;
-  cursor: pointer;
-}
+  /* cursor: pointer; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
+}
 
 #goti1 {
   top: -6px;
@@ -166,22 +159,45 @@ body {
   bottom: -6px;
   right: -6px;
 }
-
-.elementForRedStorage {
-  margin: 5px;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: red;
-  border: 3px black solid;
+.forRedStorage{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
 }
-.elementForGreenStorage {
-  margin: 5px;
-  height: 20px;
+.redGotiStand{
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 0, 0, 0.201);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.redGoti{
   width: 20px;
-  border-radius: 50%;
+  height: 20px;
+  border-radius: 3px;
+  background-color: red;
+}
+.forGreenStorage{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+}
+.greenGotiStand{
+  width: 30px;
+  height: 30px;
+  background-color: rgba(47, 54, 255, 0.434);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.greenGoti{
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
   background-color: blue;
-  border: 3px black solid;
 }
 @media only screen and (max-width: 426px) {
   body {
@@ -191,49 +207,50 @@ body {
     flex-direction: column;
   }
 
-.forRedStorage,.forGreenStorage{
-  display: flex;
+  .forRedStorage,
+  .forGreenStorage {
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-}
-.forGreenStorage{
-  margin-top: 10px;
-}
-.container{
-  margin-top: 10px;
-}
+  }
+  .forGreenStorage {
+    margin-top: 10px;
+  }
+  .container {
+    margin-top: 10px;
+  }
   #goti1 {
-    top: -6px;
-    left: -6px;
+    top: -7px;
+    left: -7px;
   }
   #goti2 {
-    top: -6px;
+    top: -7px;
   }
   #goti3 {
-    top: -6px;
+    top: -7px;
     right: -6px;
   }
   #goti4 {
-    top: 8.5%;
+    top: 8.2%;
     left: 13%;
   }
   #goti5 {
-    top: 8.5%;
+    top: 8.2%;
   }
   #goti6 {
-    top: 8.5%;
+    top: 8.2%;
     right: 13%;
   }
   #goti7 {
-    top: 20.5%;
+    top: 20.2%;
     left: 26%;
   }
   #goti8 {
-    top: 20.5%;
+    top: 20.2%;
   }
   #goti9 {
-    top: 20.5%;
+    top: 20.2%;
     right: 26%;
   }
   #goti10 {
@@ -256,14 +273,14 @@ body {
   }
   #goti16 {
     left: 26%;
-    bottom: 20.5%;
+    bottom: 20%;
   }
   #goti17 {
-    bottom: 20.5%;
+    bottom: 20%;
   }
   #goti18 {
     right: 26%;
-    bottom: 20.5%;
+    bottom: 20%;
   }
   #goti19 {
     bottom: 8.5%;

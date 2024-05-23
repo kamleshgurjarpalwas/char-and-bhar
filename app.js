@@ -1,177 +1,63 @@
-//following code for given 9 goties
-const containerForGreenGoti = document.querySelector(".forGreenStorage");
-const containerForRedGoti = document.querySelector(".forRedStorage");
-for (let i = 0; i < 9; i++) {
-  const redGoti = document.createElement("div");
-  redGoti.classList.add("elementForRedStorage");
-  containerForRedGoti.appendChild(redGoti);
-}
-for (let i = 0; i < 9; i++) {
-  const greenGoti = document.createElement("div");
-  greenGoti.classList.add("elementForGreenStorage");
-  containerForGreenGoti.appendChild(greenGoti);
-}
+const gotiStand = document.querySelectorAll(".goti-stand");
+const redGoti = document.querySelectorAll(".redGoti");
+const greenGoti = document.querySelectorAll(".greenGoti");
+let turn = 1; // Change const to let
+let count=0//for count that how many gotis comein stands
 
-//following code given for coloering of gotis
-const fRedGivGot = document.querySelectorAll(".elementForRedStorage"); // mean:-for red given goties
-const fGreenGivGot = document.querySelectorAll(".elementForGreenStorage"); //mean:-for green given goties
-let rI = 8; //iterator for red goties
-let gI = 8; //iterators for green goties
-let count = 0;
-const gotiStands = document.querySelectorAll(".goti-stand");
-
-let turn = true;
-let turn1 = false; //yha per turn1 ka kaam hai ki yadi bhar banne per jab oposition ki goti khane ke bad anya gotiya click event ko nhi sune
-gotiStands.forEach((gs, index) => {
-  gs.addEventListener("click", function () {
-    if (!this.clicked) {
-      if (turn1 === false) {
-        console.log("uper waala daba hai");
-        if (turn === true) {
-          gs.style.background = "blue";
-          gs.style.pointerEvents = "none";
-          deleteBox(turn);
-          count++;
-          if (count === 18) boxDisabl();
-          checkWinner();
-          turn = false;
-        } else {
-          gs.style.background = "red";
-          gs.style.pointerEvents = "none";
-          deleteBox(turn);
-          count++;
-          if (count === 18) boxDisabl();
-          checkWinner();
-          turn = true;
-        }
-      }
-    }
-  });
+redGoti.forEach((p) => {
+  if (turn === 1) p.addEventListener("dragstart", dragStart);
 });
 
-const winPattern = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [9, 10, 11],
-  [12, 13, 14],
-  [15, 16, 17],
-  [18, 19, 20],
-  [21, 22, 23],
-  [0, 9, 21],
-  [3, 10, 18],
-  [6, 11, 15],
-  [1, 4, 7],
-  [16, 19, 22],
-  [8, 12, 17],
-  [5, 13, 20],
-  [2, 14, 23],
-];
+greenGoti.forEach((p) => {
+  if (turn === 0) p.addEventListener("dragstart", dragStart);
+});
 
-const boxDisabl = () => {
-  for (let butt of gotiStands) {
-    butt.disabled = true;
-    butt.pointerEvents = "none";
-  }
-};
+gotiStand.forEach((s) => {
+  s.addEventListener("drop", drop);
+  s.addEventListener("dragover", allowDrop);
+});
 
-function deleteBox(turn1) {
-  if (turn1) {
-    fGreenGivGot[gI].parentNode.removeChild(fGreenGivGot[gI]);
-    gI--;
-  } else {
-    fRedGivGot[rI].parentNode.removeChild(fRedGivGot[rI]);
-    rI--;
-  }
+function dragStart(e) {
+  console.log("Up");
+  e.dataTransfer.setData("text", e.target.id);
 }
 
-const checkWinner = () => {
-  for (let winBox of winPattern) {
-    let colour1 = gotiStands[winBox[0]].style.background;
-    let colour2 = gotiStands[winBox[1]].style.background;
-    let colour3 = gotiStands[winBox[2]].style.background;
-    if (colour1 === colour2 && colour2 === colour3 && colour1 === "blue") {
-      gotiWhichEatable(colour1);
-    }
-    if (colour1 === colour2 && colour2 === colour3 && colour1 === "red") {
-      console.log("red yes");
-      gotiWhichEatable(colour1);
-    }
-  }
-};
+function allowDrop(e) {
+  console.log("on drop");
+  e.preventDefault();
+}
 
-const gotiWhichEatable = (comingColour) => {
-  turn1 = true; //yha true islliye kiya hai jab etable per click kiya ja sake
-  if (comingColour === "red") {
-    for (let eatBox of gotiStands) {
-      if (eatBox.style.background === "blue") {
-        eatBox.classList.add("eatable-goti");
-      }
-      for (let nonEatableBox of winPattern) {
-        let colour1 = gotiStands[nonEatableBox[0]].style.background;
-        let colour2 = gotiStands[nonEatableBox[1]].style.background;
-        let colour3 = gotiStands[nonEatableBox[2]].style.background;
-        if (colour1 === colour2 && colour2 === colour3 && colour1 === "blue") {
-          gotiStands[nonEatableBox[0]].classList.remove("eatable-goti");
-          gotiStands[nonEatableBox[1]].classList.remove("eatable-goti");
-          gotiStands[nonEatableBox[2]].classList.remove("eatable-goti");
-        }
-      }
-    }
-    doClickableForEatableGoti();
-  } else {
-    for (let eatBox of gotiStands) {
-      if (eatBox.style.background === "red") {
-        eatBox.classList.add("eatable-goti");
-      }
-      for (let nonEatableBox of winPattern) {
-        let colour1 = gotiStands[nonEatableBox[0]].style.background;
-        let colour2 = gotiStands[nonEatableBox[1]].style.background;
-        let colour3 = gotiStands[nonEatableBox[2]].style.background;
-        if (colour1 === colour2 && colour2 === colour3 && colour1 === "red") {
-          gotiStands[nonEatableBox[0]].classList.remove("eatable-goti");
-          gotiStands[nonEatableBox[1]].classList.remove("eatable-goti");
-          gotiStands[nonEatableBox[2]].classList.remove("eatable-goti");
-        }
-      }
-    }
-    doClickableForEatableGoti();
-  }
-};
+function drop(e) {
+  console.log("Successful");
+  e.preventDefault();
 
-const doClickableForEatableGoti = () => {
-  //yha function khane layak goti ko clickable banayega
-  const eatablegoti = document.querySelectorAll(".eatable-goti");
-  for (let butt of eatablegoti) {
-    butt.disabled = false;
-    butt.style.pointerEvents = "auto";
+  var data = e.dataTransfer.getData("text");
+  const draggedElement = document.getElementById(data);
+  draggedElement.style.pointerEvents = "none";
+  const target1 = e.target;
+  if (
+    target1.classList.contains("goti-stand") && // here classlist is a property and contains is a method and target1 is a constant
+    target1.childElementCount === 0
+  ) {
+    target1.appendChild(draggedElement);
   }
-  eatingGoti();
-};
+  count++;//updation of count
+  // Toggle turn between 1 and 0
+  if (turn === 1) turn = 0;
+  else turn = 1;
 
-const eatingGoti = () => {
-  const eatingGoti = document.querySelectorAll(".eatable-goti");
-  {
-    eatingGoti.forEach((e, index) => {
-      e.addEventListener("click", function () {
-        if (turn1 === true) {
-          e.classList.remove("eatable-goti");
-          e.style.backgroundColor = "white";
-          console.log("niche wala daba hai");
-          normalLeftGotis();
-          turn1 = false;
-        }
-      });
-    });
-  }
-};
+  // You might want to update the event listeners based on the turn
+  updateDragEventListeners();
+}
 
-//below function for normalization of eatable goties
-const normalLeftGotis = () => {
-  const toNormal = document.querySelectorAll(".eatable-goti");
-  for (let x of toNormal) {
-    x.classList.remove("eatable-goti");
-    x.disabled = true;
-    x.style.pointerEvents = "none";
-  }
-};
+function updateDragEventListeners() {
+  redGoti.forEach((p) => {
+    p.removeEventListener("dragstart", dragStart);
+    if (turn === 1) p.addEventListener("dragstart", dragStart);
+  });
+
+  greenGoti.forEach((p) => {
+    p.removeEventListener("dragstart", dragStart);
+    if (turn === 0) p.addEventListener("dragstart", dragStart);
+  });
+}
