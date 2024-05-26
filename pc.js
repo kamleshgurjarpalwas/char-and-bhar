@@ -11,16 +11,16 @@ let eatSucc = true;
 // initializeDragEventListeners();
 
 redGoti.forEach((p) => {
-  if (turn === true) p.addEventListener("touchstart", dragStart);
+  if (turn === true) p.addEventListener("dragstart", dragStart);
 });
 
 greenGoti.forEach((p) => {
-  if (turn === false) p.addEventListener("touchstart", dragStart);
+  if (turn === false) p.addEventListener("dragstart", dragStart);
 });
 
 gotiStand.forEach((s, index) => {
-  s.addEventListener("touchend", (e) => drop(e, index)); //yha per e event banakar pass ki gai hai
-  s.addEventListener("touchmove", allowDrop);
+  s.addEventListener("drop", (e) => drop(e, index)); //yha per e event banakar pass ki gai hai
+  s.addEventListener("dragover", allowDrop);
 });
 
 function dragStart(e) {
@@ -46,7 +46,10 @@ function drop(e, index) {
     turn = !turn;
     count++;
     checkBhar(index);
-    selfMoveablePlaceRemoveing();
+selfMoveablePlaceRemoveing()
+    // setTimeout(function () {
+    //   , 0;
+    // });
     if (count >= 18 && eatSucc) gotiWhereMoveable(turn);
   }
   updateDragEventListeners();
@@ -54,16 +57,16 @@ function drop(e, index) {
 
 function updateDragEventListeners() {
   redGoti.forEach((p) => {
-    p.removeEventListener("touchstart", dragStart);
+    p.removeEventListener("dragstart", dragStart);
     if (turn && !p.classList.contains("dancing-box") && !dancing) {
-      p.addEventListener("touchstart", dragStart);
+      p.addEventListener("dragstart", dragStart);
     }
   });
 
   greenGoti.forEach((p) => {
-    p.removeEventListener("touchstart", dragStart);
+    p.removeEventListener("dragstart", dragStart);
     if (!turn && !p.classList.contains("dancing-box") && !dancing) {
-      p.addEventListener("touchstart", dragStart);
+      p.addEventListener("dragstart", dragStart);
     }
   });
 }

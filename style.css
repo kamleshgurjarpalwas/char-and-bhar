@@ -2,6 +2,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: conic-gradient(
+    #05ff0d,
+    aqua,
+    #05ff0d,
+    skyblue,
+    #05ff0d,
+    #e6ff05,
+    #05ff97,
+    #05ff0d,
+    #e6ff05,
+    #05ff97,
+    skyblue,
+    aqua,
+    skyblue,
+    #05ff0d
+  );
 }
 .container {
   position: relative;
@@ -72,7 +88,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 #goti1 {
@@ -159,13 +174,13 @@ body {
   bottom: -6px;
   right: -6px;
 }
-.forRedStorage{
+.forRedStorage {
   display: flex;
   justify-content: center;
   align-content: center;
   gap: 4px;
 }
-.redGotiStand{
+.redGotiStand {
   width: 30px;
   height: 30px;
   background-color: rgba(255, 0, 0, 0.201);
@@ -173,19 +188,19 @@ body {
   justify-content: center;
   align-items: center;
 }
-.redGoti{
+.redGoti {
   width: 20px;
   height: 20px;
   border-radius: 3px;
   background-color: red;
 }
-.forGreenStorage{
+.forGreenStorage {
   display: flex;
   justify-content: center;
   align-content: center;
   gap: 4px;
 }
-.greenGotiStand{
+.greenGotiStand {
   width: 30px;
   height: 30px;
   background-color: rgba(47, 54, 255, 0.434);
@@ -193,12 +208,61 @@ body {
   justify-content: center;
   align-items: center;
 }
-.greenGoti{
+.greenGoti {
   width: 20px;
   height: 20px;
   border-radius: 3px;
   background-color: blue;
 }
+
+.dancing-box {
+  width: 20px;
+  height: 20px;
+  /* background-color: blue; */
+  position: relative;
+  animation: dance 0.5s infinite alternate; /* Applying the animation */
+}
+
+/* Keyframes animation */
+@keyframes dance {
+  /* 0% { */
+  /* transform: translateX(-1.5px); */
+  /* } */
+  /* 25% { */
+  /* transform: translateY(1.5px); */
+  /* } */
+  /* 75% { */
+  /* transform: translateX(1.5px); Move the box horizontally */
+  /* } */
+  /* 100%{ */
+  /* transform: translateY(-1.5px); */
+  /* } */
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.scoreBox {
+  background-color: rgb(21, 255, 0);
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 115px;
+}
+
+.globalScoreBox {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 @media only screen and (max-width: 426px) {
   body {
     display: flex;
