@@ -39,8 +39,7 @@
     <div class="container">
       <div class="first">
         <div class="second">
-          <div class="third">
-          </div>
+          <div class="third"></div>
         </div>
       </div>
       <div class="verTop"></div>
@@ -101,7 +100,32 @@
         <div class="goti greenGoti" id="green9" draggable="true"></div>
       </div>
     </div>
-    <script src="pc.js"></script>
-    <script src="app.js"></script>
+    <script>
+      // Function to check if the device supports touch events
+      function isTouchDevice() {
+        return (
+          "ontouchstart" in window ||
+          navigator.maxTouchPoints > 0 ||
+          navigator.msMaxTouchPoints > 0
+        );
+      }
+
+      // Load the appropriate script based on touch support
+      window.addEventListener("DOMContentLoaded", () => {
+        if (isTouchDevice()) {
+          loadScript("app.js");
+        } else {
+          loadScript("pc.js");
+        }
+      });
+
+      // Function to dynamically load a script
+      function loadScript(src) {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    </script>
   </body>
 </html>

@@ -271,3 +271,12 @@ function selfMoveablePlaceRemoveing() {
   console.log("selfMoveablePlaceRemoveing");
   for (ele of gotiStand) ele.style.backgroundColor = "";
 }
+
+const myDoc = document.documentElement;
+
+window.addEventListener("load", () => {
+  // Add a click event listener to trigger fullscreen mode
+  document.addEventListener("click", () => {
+    myDoc.requestFullscreen();
+  });
+});
