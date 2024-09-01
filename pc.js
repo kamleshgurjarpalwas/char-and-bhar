@@ -314,7 +314,7 @@ function isRightDest(index) {
   for (i in gotiRepalceAble[sourceInd]) {
     if (gotiRepalceAble[sourceInd][i] === index) return true;
   }
-  return false;
+  return false ;
 } 
 
 const myDoc = document.documentElement;
