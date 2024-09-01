@@ -319,9 +319,9 @@ function isRightDest(index) {
 
 const myDoc = document.documentElement;
 
-/*window.addEventListener("load", () => {
+window.addEventListener("load", () => {
   // Add a click event listener to trigger fullscreen mode
   document.addEventListener("click", () => {
     myDoc.requestFullscreen();
   });
-});*/
+});
