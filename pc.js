@@ -7,6 +7,10 @@ let count = 0; //counting of how many goties walked
 let dancing = false; //mean abhi goti ko khaya nhi ja skta
 let eatSucc = true;
 
+//below both variable apply after the 18
+let sourceInd;
+let dest;
+
 // Initialize drag event listeners based on the initial turn
 // initializeDragEventListeners();
 
@@ -24,6 +28,18 @@ gotiStand.forEach((s, index) => {
 });
 
 function dragStart(e) {
+  let parentEle = e.target.parentElement;
+  console.log(parentEle);
+
+  let parentId;
+
+  if (parentEle && parentEle.id) {
+    let parentId = parentEle.id;
+    console.log(parentId); // Log the parent's ID
+    sourceInd = parentId.slice(4)-1;
+  }
+
+
   e.dataTransfer.setData("text", e.target.id);
 }
 
@@ -36,36 +52,54 @@ function drop(e, index) {
 
   const data = e.dataTransfer.getData("text");
   const draggedElement = document.getElementById(data);
+
+  console.log(data);
+
   const target1 = e.target;
   if (
     target1.classList.contains("goti-stand") &&
-    target1.childElementCount === 0
+    target1.childElementCount === 0 &&
+    count < 18
   ) {
     target1.appendChild(draggedElement);
     draggedElement.style.pointerEvents = "none";
     turn = !turn;
     count++;
     checkBhar(index);
-selfMoveablePlaceRemoveing()
-    // setTimeout(function () {
-    //   , 0;
-    // });
+    selfMoveablePlaceRemoveing();
     if (count >= 18 && eatSucc) gotiWhereMoveable(turn);
+  } else if (
+    target1.classList.contains("goti-stand") &&
+    target1.childElementCount === 0 &&
+    isRightDest(index)
+  ) {
+    target1.appendChild(draggedElement);
+    draggedElement.style.pointerEvents = "none";
+    turn = !turn;
+    count++;
+    checkBhar(index);
+    selfMoveablePlaceRemoveing();
+    if (eatSucc) gotiWhereMoveable(turn);
   }
+  /* else if (
+    target1.classList.contains("goti-stand") &&
+    target1.childElementCount === 0 &&
+    count >= 18
+  )*/
   updateDragEventListeners();
 }
 
 function updateDragEventListeners() {
   redGoti.forEach((p) => {
     p.removeEventListener("dragstart", dragStart);
-    if (turn && !p.classList.contains("dancing-box") && !dancing) {
+    if (turn && !p.classList.contains("dancing-box") && !dancing && eatSucc) {
       p.addEventListener("dragstart", dragStart);
     }
   });
 
   greenGoti.forEach((p) => {
     p.removeEventListener("dragstart", dragStart);
-    if (!turn && !p.classList.contains("dancing-box") && !dancing) {
+    if (!turn && !p.classList.contains("dancing-box") && !dancing && eatSucc) {
       p.addEventListener("dragstart", dragStart);
     }
   });
@@ -275,12 +309,19 @@ function selfMoveablePlaceRemoveing() {
   for (ele of gotiStand) ele.style.backgroundColor = "";
 }
 
+function isRightDest(index) {
+  var i;
+  for (i in gotiRepalceAble[sourceInd]) {
+    if (gotiRepalceAble[sourceInd][i] === index) return true;
+  }
+  return false;
+}
 
 const myDoc = document.documentElement;
 
-window.addEventListener("load", () => {
+/*window.addEventListener("load", () => {
   // Add a click event listener to trigger fullscreen mode
   document.addEventListener("click", () => {
     myDoc.requestFullscreen();
   });
-});
+});*/

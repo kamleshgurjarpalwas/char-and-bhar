@@ -2,7 +2,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: conic-gradient(
+  /*background: conic-gradient(
     #05ff0d,
     aqua,
     #05ff0d,
@@ -17,7 +17,7 @@ body {
     aqua,
     skyblue,
     #05ff0d
-  );
+  );*/
 }
 .container {
   position: relative;
@@ -175,7 +175,9 @@ body {
   right: -6px;
 }
 .forRedStorage {
+  margin-right: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   gap: 4px;
@@ -195,7 +197,9 @@ body {
   background-color: red;
 }
 .forGreenStorage {
+  margin-left: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   gap: 4px;

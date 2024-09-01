@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./drag-drop-touch.esm.min.js?autoload" type="module"></script>
   </head>
   <body>
     <div class="forRedStorage">
@@ -100,32 +101,6 @@
         <div class="goti greenGoti" id="green9" draggable="true"></div>
       </div>
     </div>
-    <script>
-      // Function to check if the device supports touch events
-      function isTouchDevice() {
-        return (
-          "ontouchstart" in window ||
-          navigator.maxTouchPoints > 0 ||
-          navigator.msMaxTouchPoints > 0
-        );
-      }
-
-      // Load the appropriate script based on touch support
-      window.addEventListener("DOMContentLoaded", () => {
-        if (isTouchDevice()) {
-          loadScript("app.js");
-        } else {
-          loadScript("pc.js");
-        }
-      });
-
-      // Function to dynamically load a script
-      function loadScript(src) {
-        const script = document.createElement("script");
-        script.src = src;
-        script.async = true;
-        document.head.appendChild(script);
-      }
-    </script>
+    <script src="pc.js"></script>
   </body>
 </html>
