@@ -383,7 +383,7 @@ body {
     transform: scale(1); /* Initial size */
   }
   50% {
-    transform: scale(1.2); /* Scale up to 120% */
+    transform: scale(1.5); /* Scale up to 120% */
   }
   100% {
     transform: scale(1); /* Scale back to original size */
