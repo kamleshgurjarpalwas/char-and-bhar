@@ -25,6 +25,7 @@ greenGoti.forEach((p) => {
 gotiStand.forEach((s, index) => {
   s.addEventListener("drop", (e) => drop(e, index)); //yha per e event banakar pass ki gai hai
   s.addEventListener("dragover", allowDrop);
+  s.addEventListener("dragenter", drgEnter);
 });
 
 function dragStart(e) {
@@ -36,11 +37,25 @@ function dragStart(e) {
   if (parentEle && parentEle.id) {
     let parentId = parentEle.id;
     console.log(parentId); // Log the parent's ID
-    sourceInd = parentId.slice(4)-1;
+    sourceInd = parentId.slice(4) - 1;
   }
 
-
   e.dataTransfer.setData("text", e.target.id);
+}
+
+function drgEnter(e) {
+  e.preventDefault();
+
+  console.log(e);
+
+  let ele = document.getElementById(e.target.id);
+
+  if(ele.childElementCount===0)
+  ele.classList.add("comeOnStand");
+
+  setTimeout(() => {
+    ele.classList.remove("comeOnStand");
+  }, 1000);
 }
 
 function allowDrop(e) {
@@ -314,10 +329,10 @@ function isRightDest(index) {
   for (i in gotiRepalceAble[sourceInd]) {
     if (gotiRepalceAble[sourceInd][i] === index) return true;
   }
-  return false ;
-} 
+  return false;
+}
 
-const myDoc = document.documentElement;
+/*const myDoc = document.documentElement;
 
 window.addEventListener("load", () => {
   // Add a click event listener to trigger fullscreen mode
@@ -325,3 +340,4 @@ window.addEventListener("load", () => {
     myDoc.requestFullscreen();
   });
 });
+*/
