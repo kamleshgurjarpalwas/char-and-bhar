@@ -1,391 +1,109 @@
+/* Style for Nine Men's Morris board game */
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*background: conic-gradient(
-    #05ff0d,
-    aqua,
-    #05ff0d,
-    skyblue,
-    #05ff0d,
-    #e6ff05,
-    #05ff97,
-    #05ff0d,
-    #e6ff05,
-    #05ff97,
-    skyblue,
-    aqua,
-    skyblue,
-    #05ff0d
-  );*/
-}
-.container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8vh;
-}
-.first {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90vw;
-  height: 80vh;
-  border: 5px black solid;
-}
-.second {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  height: 80%;
-  border: 5px black solid;
-  position: relative;
-}
-.third {
-  width: 60%;
-  height: 70%;
-  border: 5px black solid;
-}
-.verTop {
-  width: 5px;
-  height: 22%;
-  background-color: black;
-  position: absolute;
-  top: 0;
-}
-.verBottom {
-  width: 5px;
-  height: 22%;
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-}
-.horLeft {
-  height: 5px;
-  width: 29%;
-  background-color: black;
-  position: absolute;
-  left: 0;
-}
-.horRight {
-  height: 5px;
-  width: 29%;
-  background-color: black;
-  position: absolute;
-  right: 0;
-}
-
-.goti-stand {
-  height: 25px;
-  width: 25px;
-  background-color: white;
-  border-radius: 5px;
-  border: 3px black solid;
-  position: absolute;
-  /* cursor: pointer; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#goti1 {
-  top: -6px;
-  left: -6px;
-}
-#goti2 {
-  top: -6px;
-}
-#goti3 {
-  top: -6px;
-  right: -6px;
-}
-#goti4 {
-  top: 8.5%;
-  left: 14.3%;
-}
-#goti5 {
-  top: 8.5%;
-}
-#goti6 {
-  top: 8.5%;
-  right: 14.3%;
-}
-#goti7 {
-  top: 20.5%;
-  left: 28%;
-}
-#goti8 {
-  top: 20.5%;
-}
-#goti9 {
-  top: 20.5%;
-  right: 28%;
-}
-#goti10 {
-  left: -6px;
-}
-#goti11 {
-  left: 14.3%;
-}
-#goti12 {
-  left: 28%;
-}
-#goti13 {
-  right: 28%;
-}
-#goti14 {
-  right: 14.3%;
-}
-#goti15 {
-  right: -6px;
-}
-#goti16 {
-  left: 28%;
-  bottom: 20.5%;
-}
-#goti17 {
-  bottom: 20.5%;
-}
-#goti18 {
-  right: 28%;
-  bottom: 20.5%;
-}
-#goti19 {
-  bottom: 8.5%;
-  left: 14.3%;
-}
-#goti20 {
-  bottom: 8.5%;
-}
-#goti21 {
-  bottom: 8.5%;
-  right: 14.3%;
-}
-#goti22 {
-  bottom: -6px;
-  left: -6px;
-}
-#goti23 {
-  bottom: -6px;
-}
-#goti24 {
-  bottom: -6px;
-  right: -6px;
-}
-.forRedStorage {
-  margin-right: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  gap: 4px;
-}
-.redGotiStand {
-  width: 30px;
-  height: 30px;
-  background-color: rgba(255, 0, 0, 0.201);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.redGoti {
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  background-color: red;
-}
-.forGreenStorage {
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  gap: 4px;
-}
-.greenGotiStand {
-  width: 30px;
-  height: 30px;
-  background-color: rgba(47, 54, 255, 0.434);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.greenGoti {
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  background-color: blue;
-}
-
-.dancing-box {
-  width: 20px;
-  height: 20px;
-  /* background-color: blue; */
-  position: relative;
-  animation: dance 0.5s infinite alternate; /* Applying the animation */
-}
-
-/* Keyframes animation */
-@keyframes dance {
-  /* 0% { */
-  /* transform: translateX(-1.5px); */
-  /* } */
-  /* 25% { */
-  /* transform: translateY(1.5px); */
-  /* } */
-  /* 75% { */
-  /* transform: translateX(1.5px); Move the box horizontally */
-  /* } */
-  /* 100%{ */
-  /* transform: translateY(-1.5px); */
-  /* } */
-  0% {
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.scoreBox {
-  background-color: rgb(21, 255, 0);
-  border-radius: 3px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  width: 115px;
-}
-
-.globalScoreBox {
-  width: 100%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-@media only screen and (max-width: 426px) {
-  body {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-  }
-
-  .forRedStorage,
-  .forGreenStorage {
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+}
+h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+#board {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 500px;
+    max-height: 500px;
+    border: 2px solid #333;
+    position: relative;
+}
+/* Draw the board lines via pseudo-element */
+#board::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      /* Outer square */
+      linear-gradient(#333 2px, transparent 2px) 0% 0% / 100% 100% no-repeat,
+      linear-gradient(90deg, #333 2px, transparent 2px) 0% 0% / 100% 100% no-repeat,
+      /* Middle square */
+      linear-gradient(#333 2px, transparent 2px) 14.28% 14.28% / 71.42% 71.42% no-repeat,
+      linear-gradient(90deg, #333 2px, transparent 2px) 14.28% 14.28% / 71.42% 71.42% no-repeat,
+      /* Inner square */
+      linear-gradient(#333 2px, transparent 2px) 28.56% 28.56% / 42.88% 42.88% no-repeat,
+      linear-gradient(90deg, #333 2px, transparent 2px) 28.56% 28.56% / 42.88% 42.88% no-repeat,
+      /* Cross lines */
+      linear-gradient(#333 2px, transparent 2px) 42.88% 0% / 14.28% 100% no-repeat,
+      linear-gradient(90deg, #333 2px, transparent 2px) 0% 42.88% / 100% 14.28% no-repeat;
+    background-color: transparent;
+}
+.cell {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.point {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.point .spot {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #888;
+    border-radius: 50%;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+}
+.point .piece {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-  }
-  .forGreenStorage {
-    margin-top: 10px;
-  }
-  .container {
-    margin-top: 10px;
-  }
-  #goti1 {
-    top: -7px;
-    left: -7px;
-  }
-  #goti2 {
-    top: -7px;
-  }
-  #goti3 {
-    top: -7px;
-    right: -6px;
-  }
-  #goti4 {
-    top: 8.2%;
-    left: 13%;
-  }
-  #goti5 {
-    top: 8.2%;
-  }
-  #goti6 {
-    top: 8.2%;
-    right: 13%;
-  }
-  #goti7 {
-    top: 20.2%;
-    left: 26%;
-  }
-  #goti8 {
-    top: 20.2%;
-  }
-  #goti9 {
-    top: 20.2%;
-    right: 26%;
-  }
-  #goti10 {
-    left: -6px;
-  }
-  #goti11 {
-    left: 12%;
-  }
-  #goti12 {
-    left: 26%;
-  }
-  #goti13 {
-    right: 26%;
-  }
-  #goti14 {
-    right: 12%;
-  }
-  #goti15 {
-    right: -6px;
-  }
-  #goti16 {
-    left: 26%;
-    bottom: 20%;
-  }
-  #goti17 {
-    bottom: 20%;
-  }
-  #goti18 {
-    right: 26%;
-    bottom: 20%;
-  }
-  #goti19 {
-    bottom: 8.5%;
-    left: 13%;
-  }
-  #goti20 {
-    bottom: 8.5%;
-  }
-  #goti21 {
-    bottom: 8.5%;
-    right: 13%;
-  }
-  #goti22 {
-    bottom: -6px;
-    left: -6px;
-  }
-  #goti23 {
-    bottom: -6px;
-  }
-  #goti24 {
-    bottom: -6px;
-    right: -6px;
-  }
 }
-
-.comeOnStand {
-  animation: scaleUpDown 0.6s ease-in-out forwards; /* Animation with smooth transition */
+.piece-circle {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: gray;
+    border: 2px solid #333;
+    transition: transform 0.1s;
 }
-
-@keyframes scaleUpDown {
-  0% {
-    transform: scale(1); /* Initial size */
-  }
-  50% {
-    transform: scale(1.5); /* Scale up to 120% */
-  }
-  100% {
-    transform: scale(1); /* Scale back to original size */
-  }
+.piece.red .piece-circle {
+    background: red;
+}
+.piece.blue .piece-circle {
+    background: blue;
+}
+.dancing {
+    animation: dance 0.8s ease-in-out infinite alternate;
+}
+@keyframes dance {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-8px); }
+}
+#status {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#turnIndicator, #scoreboard {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+#turnIndicator {
+    font-weight: bold;
 }

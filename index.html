@@ -1,106 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="./drag-drop-touch.esm.min.js?autoload" type="module"></script>
-  </head>
-  <body>
-    <div class="forRedStorage">
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red1" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red2" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red3" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red4" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red5" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red6" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red7" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red8" draggable="true"></div>
-      </div>
-      <div class="redGotiStand">
-        <div class="goti redGoti" id="red9" draggable="true"></div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Nine Men's Morris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Nine Men's Morris</h1>
+    <div id="board"></div>
+    <div id="status">
+        <div id="turnIndicator">Turn: Red</div>
+        <div id="scoreboard">Score - Red: 0, Blue: 0</div>
     </div>
-    <div class="container">
-      <div class="first">
-        <div class="second">
-          <div class="third"></div>
-        </div>
-      </div>
-      <div class="verTop"></div>
-      <div class="verBottom"></div>
-      <div class="horLeft"></div>
-      <div class="horRight"></div>
-      <div class="goti-stand" id="goti1"></div>
-      <div class="goti-stand" id="goti2"></div>
-      <div class="goti-stand" id="goti3"></div>
-      <div class="goti-stand" id="goti4"></div>
-      <div class="goti-stand" id="goti5"></div>
-      <div class="goti-stand" id="goti6"></div>
-      <div class="goti-stand" id="goti7"></div>
-      <div class="goti-stand" id="goti8"></div>
-      <div class="goti-stand" id="goti9"></div>
-      <div class="goti-stand" id="goti10"></div>
-      <div class="goti-stand" id="goti11"></div>
-      <div class="goti-stand" id="goti12"></div>
-      <div class="goti-stand" id="goti13"></div>
-      <div class="goti-stand" id="goti14"></div>
-      <div class="goti-stand" id="goti15"></div>
-      <div class="goti-stand" id="goti16"></div>
-      <div class="goti-stand" id="goti17"></div>
-      <div class="goti-stand" id="goti18"></div>
-      <div class="goti-stand" id="goti19"></div>
-      <div class="goti-stand" id="goti20"></div>
-      <div class="goti-stand" id="goti21"></div>
-      <div class="goti-stand" id="goti22"></div>
-      <div class="goti-stand" id="goti23"></div>
-      <div class="goti-stand" id="goti24"></div>
-    </div>
-    <div class="forGreenStorage">
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green1" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green2" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green3" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green4" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green5" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green6" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green7" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green8" draggable="true"></div>
-      </div>
-      <div class="greenGotiStand">
-        <div class="goti greenGoti" id="green9" draggable="true"></div>
-      </div>
-    </div>
-    <script src="pc.js?autoload"></script>
-  </body>
+    <script src="pc.js"></script>
+</body>
 </html>
