@@ -19,7 +19,7 @@ After all pieces are placed, players take turns moving their pieces to adjacent 
 
 ## 📷 Screenshot
 
-*(Insert gameplay screenshot here)*
+![Game Screenshot](image.png)
 
 ---
 
